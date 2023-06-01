@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: #FFFFF0;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.background {
+    /* The image used */
+    background-image: url('static/sticky-notes-with-fake-news.jpg');
+
+    min-height: 720px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    opacity: 0.95;
+    padding: 20px;
+}
+
+.submit_button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+
+<div class="background">
+
+    <div class="container">
+      <form action="{{ url_for('predict')}}" method="POST">
+
+        <textarea id="news" name="message" required="required" placeholder="Вставьте заголовок или текст новости на английском или русском языке..." style="height:200px"></textarea>
+
+        <input class="submit_button" type="submit" value="Фейк или нет?">
+
+        <br> </br>
+        <output class="results" name="result">Данная новость: {{prediction}}</output>
+
+      </form>
+    </div>
+
+</div>
+
+</body>
+</html>
