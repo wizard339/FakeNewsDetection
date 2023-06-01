@@ -17,7 +17,6 @@ Web application for recognizing fake news
 - Open project in any IDE (Pycharm or VSCode)
 - Run `main.py`, go to the `http://127.0.0.1:5000/`
 - If you want to build your model with the some changes, you can check the `model.ipynb`.
-- You can check that the web application is working fine. Sometimes classifications can be wrong.
 
 ## Screenshots
 
